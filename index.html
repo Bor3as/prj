@@ -1,72 +1,66 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Документация изделий</title>
+    <meta charset="UTF-8"> <!-- Устанавливает кодировку символов страницы -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Настройка для адаптивного дизайна на мобильных устройствах -->
+    <title>Документация изделий</title> <!-- Заголовок страницы -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
+            font-family: Arial, sans-serif; /* Устанавливает шрифт для всего документа */
+            padding: 20px; /* Внутренний отступ для всего тела документа */
         }
         .item-list {
-            list-style: none;
-            padding: 0;
+            padding: 0px; /* Убирает отступы внутри списка */
         }
         .item {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Отступ снизу каждого изделия (элемента списка) */
         }
         .item-header {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            padding-left: 20px;
-            position: relative;
+            display: flex; /* Размещает элементы внутри контейнера в одну строку */
+            align-items: center; /* Выравнивает элементы по центру вертикально */
+            cursor: pointer; /* Меняет указатель мыши на "руку", указывая на возможность клика */
+            padding-left: 0px; /* Добавляет отступ слева, чтобы было место для индикатора (точки) */
+            position: relative; /* Устанавливает позиционирование для использования псевдоэлемента */
         }
         .item-name {
-            margin-right: 10px; /* Отступ между названием изделия и кнопкой */
+            margin-right: 10px; /* Добавляет отступ справа от названия изделия, чтобы кнопка была рядом */
         }
-        .item-header::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            font-size: 20px;
-            line-height: 1;
-            transition: transform 0.3s;
-        }
-        .item-header.expanded::before {
-            transform: rotate(90deg);
-        }
+        
+        
         .details {
-            display: none;
-            margin-left: 20px;
-            margin-top: 5px;
+            display: none; /* Скрывает список деталей по умолчанию */
+            margin-left: 20px; /* Добавляет отступ слева для вложенного списка деталей */
+            margin-top: 5px; /* Добавляет отступ сверху для отделения списка от заголовка */
         }
         .download-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            text-decoration: none;
-            border-radius: 3px;
-            cursor: pointer;
+            background-color: #4CAF50; /* Устанавливает зеленый фон для кнопки */
+            color: white; /* Устанавливает белый цвет текста на кнопке */
+            border: none; /* Убирает рамку вокруг кнопки */
+            padding: 5px 10px; /* Добавляет внутренние отступы кнопке (вокруг текста) */
+            text-decoration: none; /* Убирает подчеркивание текста кнопки (ссылки) */
+            border-radius: 3px; /* Добавляет округление углов кнопки */
+            cursor: pointer; /* Меняет указатель мыши на "руку", указывая на возможность клика */
         }
         .download-button:hover {
-            background-color: #45a049;
+            background-color: #45a049; /* Изменяет цвет кнопки при наведении курсора */
         }
     </style>
 </head>
 <body>
 
-    <h1>Документация изделий</h1>
+    <h1>Документация изделий</h1> <!-- Заголовок страницы -->
 
     <ul class="item-list">
+        <!-- Начало списка изделий -->
         <li class="item">
+            <!-- Каждое изделие - элемент списка -->
             <div class="item-header">
-                <span class="item-name">Изделие 1</span>
-                <a href="files/izdelie1.zip" class="download-button" download>Скачать архив</a>
+                <!-- Контейнер для названия изделия и кнопки скачивания -->
+                <span class="item-name">Изделие 1</span> <!-- Название изделия -->
+                <a href="docs/НСБВ.304513.005 СБ Сборочный чертёж.zip" class="download-button" download>Скачать архив</a> <!-- Кнопка скачивания архива -->
             </div>
             <ul class="details">
+                <!-- Скрытый список деталей, который раскрывается по клику -->
                 <li>Деталь 1.1</li>
                 <li>Деталь 1.2</li>
                 <li>Деталь 1.3</li>
@@ -97,15 +91,16 @@
     </ul>
 
     <script>
+        // JavaScript для обработки кликов по элементам заголовка
         document.querySelectorAll('.item-header').forEach(header => {
             header.addEventListener('click', () => {
-                const details = header.nextElementSibling;
+                const details = header.nextElementSibling; // Выбор списка деталей, который идет после заголовка
                 if (details.style.display === 'none' || details.style.display === '') {
-                    details.style.display = 'block';
-                    header.classList.add('expanded');
+                    details.style.display = 'block'; // Показать список деталей, если он скрыт
+                    header.classList.add('expanded'); // Добавить класс для поворота индикатора
                 } else {
-                    details.style.display = 'none';
-                    header.classList.remove('expanded');
+                    details.style.display = 'none'; // Скрыть список деталей, если он показан
+                    header.classList.remove('expanded'); // Убрать класс, чтобы вернуть индикатор в исходное положение
                 }
             });
         });
