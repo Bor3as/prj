@@ -10,23 +10,21 @@
             padding: 20px; /* Внутренний отступ для всего тела документа */
         }
         .item-list {
-            padding: 0px; /* Убирает отступы внутри списка */
+            padding: 0; /* Убирает отступы внутри списка */
         }
         .item {
             margin-bottom: 10px; /* Отступ снизу каждого изделия (элемента списка) */
         }
-        .item-header {
+        .item-header, .detail-header {
             display: flex; /* Размещает элементы внутри контейнера в одну строку */
             align-items: center; /* Выравнивает элементы по центру вертикально */
             cursor: pointer; /* Меняет указатель мыши на "руку", указывая на возможность клика */
-            padding-left: 0px; /* Добавляет отступ слева, чтобы было место для индикатора (точки) */
+            padding-left: 0; /* Убирает отступ слева, чтобы не было лишнего отступа */
             position: relative; /* Устанавливает позиционирование для использования псевдоэлемента */
         }
-        .item-name {
-            margin-right: 10px; /* Добавляет отступ справа от названия изделия, чтобы кнопка была рядом */
+        .item-name, .detail-name {
+            margin-right: 10px; /* Добавляет отступ справа от названия, чтобы кнопка была рядом */
         }
-        
-        
         .details {
             display: none; /* Скрывает список деталей по умолчанию */
             margin-left: 20px; /* Добавляет отступ слева для вложенного списка деталей */
@@ -61,9 +59,15 @@
             </div>
             <ul class="details">
                 <!-- Скрытый список деталей, который раскрывается по клику -->
-                <li>НСБВ.74.3311.003 Упор</li> <a href="docs/НСБВ.74.3311.003 Упор.zip" class="download-button" download>Скачать архив</a>
-                <li>НСБВ.741134.345 Тяга</li> <a href="docs/НСБВ.741134.345 Тяга.zip" class="download-button" download>Скачать архив</a>
-                </ul>
+                <li class="detail-header">
+                    <span class="detail-name">НСБВ.74.3311.003 Упор</span>
+                    <a href="docs/НСБВ.74.3311.003 Упор.zip" class="download-button" download>Скачать архив</a>
+                </li>
+                <li class="detail-header">
+                    <span class="detail-name">НСБВ.741134.345 Тяга</span>
+                    <a href="docs/НСБВ.741134.345 Тяга.zip" class="download-button" download>Скачать архив</a>
+                </li>
+            </ul>
         </li>
         <li class="item">
             <div class="item-header">
@@ -71,9 +75,18 @@
                 <a href="files/izdelie2.zip" class="download-button" download>Скачать архив</a>
             </div>
             <ul class="details">
-                <li>Деталь 2.1</li>
-                <li>Деталь 2.2</li>
-                <li>Деталь 2.3</li>
+                <li class="detail-header">
+                    <span class="detail-name">Деталь 2.1</span>
+                    <a href="files/detail2.1.zip" class="download-button" download>Скачать архив</a>
+                </li>
+                <li class="detail-header">
+                    <span class="detail-name">Деталь 2.2</span>
+                    <a href="files/detail2.2.zip" class="download-button" download>Скачать архив</a>
+                </li>
+                <li class="detail-header">
+                    <span class="detail-name">Деталь 2.3</span>
+                    <a href="files/detail2.3.zip" class="download-button" download>Скачать архив</a>
+                </li>
             </ul>
         </li>
         <li class="item">
@@ -82,9 +95,18 @@
                 <a href="files/izdelie3.zip" class="download-button" download>Скачать архив</a>
             </div>
             <ul class="details">
-                <li>Деталь 3.1</li>
-                <li>Деталь 3.2</li>
-                <li>Деталь 3.3</li>
+                <li class="detail-header">
+                    <span class="detail-name">Деталь 3.1</span>
+                    <a href="files/detail3.1.zip" class="download-button" download>Скачать архив</a>
+                </li>
+                <li class="detail-header">
+                    <span class="detail-name">Деталь 3.2</span>
+                    <a href="files/detail3.2.zip" class="download-button" download>Скачать архив</a>
+                </li>
+                <li class="detail-header">
+                    <span class="detail-name">Деталь 3.3</span>
+                    <a href="files/detail3.3.zip" class="download-button" download>Скачать архив</a>
+                </li>
             </ul>
         </li>
     </ul>
