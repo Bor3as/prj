@@ -15,16 +15,19 @@
         }
         .item {
             margin-bottom: 10px;
+        }
+        .item-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            cursor: pointer;
+            padding-left: 20px;
+            position: relative;
         }
         .item-name {
-            cursor: pointer;
-            position: relative;
-            padding-left: 20px;
+            margin: 0;
         }
-        .item-name::before {
+        .item-header::before {
             content: '•';
             position: absolute;
             left: 0;
@@ -32,7 +35,7 @@
             line-height: 1;
             transition: transform 0.3s;
         }
-        .item-name.expanded::before {
+        .item-header.expanded::before {
             transform: rotate(90deg);
         }
         .details {
@@ -60,8 +63,10 @@
 
     <ul class="item-list">
         <li class="item">
-            <span class="item-name">Изделие 1</span>
-            <a href="docs/НСБВ.304513.005 СБ Сборочный чертёж.zip" class="download-button" download>Скачать архив</a>
+            <div class="item-header">
+                <span class="item-name">Изделие 1</span>
+                <a href="files/izdelie1.zip" class="download-button" download>Скачать архив</a>
+            </div>
             <ul class="details">
                 <li>Деталь 1.1</li>
                 <li>Деталь 1.2</li>
@@ -69,8 +74,10 @@
             </ul>
         </li>
         <li class="item">
-            <span class="item-name">Изделие 2</span>
-            <a href="files/izdelie2.zip" class="download-button" download>Скачать архив</a>
+            <div class="item-header">
+                <span class="item-name">Изделие 2</span>
+                <a href="files/izdelie2.zip" class="download-button" download>Скачать архив</a>
+            </div>
             <ul class="details">
                 <li>Деталь 2.1</li>
                 <li>Деталь 2.2</li>
@@ -78,8 +85,10 @@
             </ul>
         </li>
         <li class="item">
-            <span class="item-name">Изделие 3</span>
-            <a href="files/izdelie3.zip" class="download-button" download>Скачать архив</a>
+            <div class="item-header">
+                <span class="item-name">Изделие 3</span>
+                <a href="files/izdelie3.zip" class="download-button" download>Скачать архив</a>
+            </div>
             <ul class="details">
                 <li>Деталь 3.1</li>
                 <li>Деталь 3.2</li>
@@ -89,15 +98,15 @@
     </ul>
 
     <script>
-        document.querySelectorAll('.item-name').forEach(item => {
-            item.addEventListener('click', () => {
-                const details = item.nextElementSibling.nextElementSibling;
+        document.querySelectorAll('.item-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const details = header.nextElementSibling;
                 if (details.style.display === 'none' || details.style.display === '') {
                     details.style.display = 'block';
-                    item.classList.add('expanded');
+                    header.classList.add('expanded');
                 } else {
                     details.style.display = 'none';
-                    item.classList.remove('expanded');
+                    header.classList.remove('expanded');
                 }
             });
         });
