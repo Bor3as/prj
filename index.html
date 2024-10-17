@@ -1,134 +1,97 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8"> <!-- Устанавливает кодировку символов страницы -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Настройка для адаптивного дизайна на мобильных устройствах -->
-    <title>Документация изделий</title> <!-- Заголовок страницы -->
-    <style>
-        body {
-            font-family: Arial, sans-serif; /* Устанавливает шрифт для всего документа */
-            padding: 20px; /* Внутренний отступ для всего тела документа */
-        }
-        .item-list {
-            padding: 0; /* Убирает отступы внутри списка */
-        }
-        .item {
-            margin-bottom: 15px; /* Отступ снизу каждого изделия (элемента списка) */
-        }
-        .item-header, .detail-header {
-            display: flex; /* Размещает элементы внутри контейнера в одну строку */
-            align-items: center; /* Выравнивает элементы по центру вертикально */
-            cursor: pointer; /* Меняет указатель мыши на "руку", указывая на возможность клика */
-            padding-left: 0; /* Убирает отступ слева, чтобы не было лишнего отступа */
-            position: relative; /* Устанавливает позиционирование для использования псевдоэлемента */
-        }
-        .item-name, .detail-name {
-            margin-right: 10px; /* Добавляет отступ справа от названия, чтобы кнопка была рядом */
-        }
-        .details {
-            display: none; /* Скрывает список деталей по умолчанию */
-            margin-left: 20px; /* Добавляет отступ слева для вложенного списка деталей */
-            margin-top: 5px; /* Добавляет отступ сверху для отделения списка от заголовка */
-        }
-        .detail-header {
-            margin-bottom: 10px; /* Увеличивает расстояние между строками деталей */
-        }
-        .download-button {
-            background-color: #4CAF50; /* Устанавливает зеленый фон для кнопки */
-            color: white; /* Устанавливает белый цвет текста на кнопке */
-            border: none; /* Убирает рамку вокруг кнопки */
-            padding: 5px 10px; /* Добавляет внутренние отступы кнопке (вокруг текста) */
-            text-decoration: none; /* Убирает подчеркивание текста кнопки (ссылки) */
-            border-radius: 3px; /* Добавляет округление углов кнопки */
-            cursor: pointer; /* Меняет указатель мыши на "руку", указывая на возможность клика */
-        }
-        .download-button:hover {
-            background-color: #45a049; /* Изменяет цвет кнопки при наведении курсора */
-        }
-    </style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в систему учёта документов</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
 
-    <h1>Документация изделий</h1> <!-- Заголовок страницы -->
+    <div class="login-container">
+        <h1>Вход в систему</h1>
 
-    <ul class="item-list">
-        <!-- Начало списка изделий -->
-        <li class="item">
-            <!-- Каждое изделие - элемент списка -->
-            <div class="item-header">
-                <!-- Контейнер для названия изделия и кнопки скачивания -->
-                <span class="item-name">НСБВ.304513.005 СБ Сборочный чертёж</span> <!-- Название изделия -->
-                <a href="docs/НСБВ.304513.005 СБ Сборочный чертёж.zip" class="download-button" download>Скачать архив</a> <!-- Кнопка скачивания архива -->
-            </div>
-            <ul class="details">
-                <!-- Скрытый список деталей, который раскрывается по клику -->
-                <li class="detail-header">
-                    <span class="detail-name">НСБВ.74.3311.003 Упор</span>
-                    <a href="docs/НСБВ.74.3311.003 Упор.zip" class="download-button" download>Скачать архив</a>
-                </li>
-                <li class="detail-header">
-                    <span class="detail-name">НСБВ.741134.345 Тяга</span>
-                    <a href="docs/НСБВ.741134.345 Тяга.zip" class="download-button" download>Скачать архив</a>
-                </li>
-            </ul>
-        </li>
-        <li class="item">
-            <div class="item-header">
-                <span class="item-name">Изделие 2</span>
-                <a href="files/izdelie2.zip" class="download-button" download>Скачать архив</a>
-            </div>
-            <ul class="details">
-                <li class="detail-header">
-                    <span class="detail-name">Деталь 2.1</span>
-                    <a href="files/detail2.1.zip" class="download-button" download>Скачать архив</a>
-                </li>
-                <li class="detail-header">
-                    <span class="detail-name">Деталь 2.2</span>
-                    <a href="files/detail2.2.zip" class="download-button" download>Скачать архив</a>
-                </li>
-                <li class="detail-header">
-                    <span class="detail-name">Деталь 2.3</span>
-                    <a href="files/detail2.3.zip" class="download-button" download>Скачать архив</a>
-                </li>
-            </ul>
-        </li>
-        <li class="item">
-            <div class="item-header">
-                <span class="item-name">Изделие 3</span>
-                <a href="files/izdelie3.zip" class="download-button" download>Скачать архив</a>
-            </div>
-            <ul class="details">
-                <li class="detail-header">
-                    <span class="detail-name">Деталь 3.1</span>
-                    <a href="files/detail3.1.zip" class="download-button" download>Скачать архив</a>
-                </li>
-                <li class="detail-header">
-                    <span class="detail-name">Деталь 3.2</span>
-                    <a href="files/detail3.2.zip" class="download-button" download>Скачать архив</a>
-                </li>
-                <li class="detail-header">
-                    <span class="detail-name">Деталь 3.3</span>
-                    <a href="files/detail3.3.zip" class="download-button" download>Скачать архив</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+        <form action="auth.php" method="post">  <!--  Замените auth.php на скрипт обработки входа -->
 
-    <script>
-        // JavaScript для обработки кликов по элементам заголовка
-        document.querySelectorAll('.item-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const details = header.nextElementSibling; // Выбор списка деталей, который идет после заголовка
-                if (details.style.display === 'none' || details.style.display === '') {
-                    details.style.display = 'block'; // Показать список деталей, если он скрыт
-                    header.classList.add('expanded'); // Добавить класс для поворота индикатора
-                } else {
-                    details.style.display = 'none'; // Скрыть список деталей, если он показан
-                    header.classList.remove('expanded'); // Убрать класс, чтобы вернуть индикатор в исходное положение
-                }
-            });
-        });
-    </script>
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Войти">
+
+            <div class="forgot-password">
+                <a href="forgot_password.html">Забыли пароль?</a> <!-- Замените forgot_password.html на страницу восстановления пароля -->
+            </div>
+
+        </form>
+    </div>
 
 </body>
 </html>
+/* style.css */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
